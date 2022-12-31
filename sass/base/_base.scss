@@ -1,0 +1,40 @@
+*,
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+    
+}
+html{
+    //this is  what 1 reem is
+    font-size: 62.5%;// when we want 1rem=10px then 10px/16px=62.5%
+    
+  
+    @include respond(tab-land){//<1200
+        font-size: 56.25%;//when we want 1rem=9px then 9/16=56.25%
+    }
+    @include respond(tab-port){//<900
+        font-size: 50%;//when we want 1rem=8px then 8/16=50%
+    }
+    /* Let suppose we have a screen of 700  px which is less then 1200 and 900, so thee declarartiom
+    which is in last will be follow  */
+    @include respond(big-desktop){
+        font-size: 75%;//when we want 1rem=12px then 12/16=75%
+    }
+    }
+
+body{
+    box-sizing: border-box;
+    padding: 3rem;
+    @include respond(tab-port){
+        padding: 0;
+    }
+}
+
+
+::selection{
+    background-color: $color-primary;
+    color: white;
+}
+
